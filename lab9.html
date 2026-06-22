@@ -1,0 +1,75 @@
+<!-- Program 9
+Validate User ID, Name, Password and Email using JavaScript
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+
+<script>
+function validateForm(){
+
+    let uid = document.getElementById("uid").value;
+    let name = document.getElementById("name").value;
+    let pass = document.getElementById("pass").value;
+    let email = document.getElementById("email").value;
+
+    // User ID
+    if(uid.length < 5 || uid.length > 12){
+        alert("User ID must be 5 to 12 characters");
+        return;
+    }
+
+    // Name
+    if(name.length < 15 || !/^[A-Za-z ]+$/.test(name)){
+        alert("Name should contain only alphabets and minimum 15 characters");
+        return;
+    }
+
+    // Password
+    if(pass.length < 8 ||
+       !/[A-Z]/.test(pass) ||
+       !/[0-9]/.test(pass) ||
+       !/[!@#$%^&*]/.test(pass)){
+        alert("Invalid Password");
+        return;
+    }
+
+    // Email
+    if(!email.includes("@") || !email.includes(".")){
+        alert("Invalid Email");
+        return;
+    }
+
+    alert("Registration Successful");
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Registration Form</h2>
+
+User ID:
+<input type="text" id="uid"><br><br>
+
+Name:
+<input type="text" id="name"><br><br>
+
+Password:
+<input type="password" id="pass"><br><br>
+
+Email:
+<input type="text" id="email"><br><br>
+
+<button onclick="validateForm()">
+Submit
+</button>
+
+</body>
+</html>
+
+
+

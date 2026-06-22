@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback Form</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background-color: lightgray;
+        }
+
+        form{
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        input, select, textarea{
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 10px;
+        }
+
+        .radio, .check{
+            width: auto;
+        }
+
+        input[type="submit"]{
+            background: blue;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Student Feedback Form</h2>
+
+<form>
+
+    Name:
+    <input type="text" placeholder="Enter Name">
+
+    Email:
+    <input type="email" placeholder="Enter Email">
+
+    USN:
+    <input type="text" placeholder="Enter USN">
+
+    Semester:
+    <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option selected>6</option>
+        <option>7</option>
+        <option>8</option>
+    </select>
+
+    Branch:<br>
+    <input class="radio" type="radio" name="branch"> CSE
+    <input class="radio" type="radio" name="branch"> ISE
+    <input class="radio" type="radio" name="branch"> ECE
+    <br><br>
+
+    Feedback:
+    <textarea rows="4" placeholder="Enter Feedback"></textarea>
+
+    <input class="check" type="checkbox">
+    Send me a copy of feedback
+
+    <br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!-- Program 7(b)
+Create HTML Page with Name, Email, Mobile No,
+Gender, Favorite Color and validate using JavaScript.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            text-align: center;
+        }
+
+        input, select, textarea{
+            margin: 5px;
+            padding: 5px;
+            width: 200px;
+        }
+    </style>
+
+    <script>
+        function validateForm(){
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let mobile = document.getElementById("mobile").value;
+            let gender = document.getElementById("gender").value;
+            let color = document.getElementById("color").value;
+
+            if(name==""){
+                alert("Enter Name");
+                return;
+            }
+
+            if(email=="" || !email.includes("@")){
+                alert("Enter Valid Email");
+                return;
+            }
+
+            if(mobile.length!=10){
+                alert("Enter 10 Digit Mobile Number");
+                return;
+            }
+
+            if(gender==""){
+                alert("Select Gender");
+                return;
+            }
+
+            if(color==""){
+                alert("Enter Favorite Color");
+                return;
+            }
+
+            document.getElementById("result").value =
+            "Name : " + name +
+            "\nEmail : " + email +
+            "\nMobile : " + mobile +
+            "\nGender : " + gender +
+            "\nFavorite Color : " + color;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h2>Form Validation</h2>
+
+<form>
+
+<input type="text" id="name" placeholder="Name"><br>
+
+<input type="text" id="email" placeholder="Email"><br>
+
+<input type="text" id="mobile" placeholder="Mobile Number"><br>
+
+<select id="gender">
+    <option value="">Select Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+</select><br>
+
+<input type="text" id="color" placeholder="Favorite Color"><br>
+
+<button type="button" onclick="validateForm()">
+Submit
+</button>
+
+<br><br>
+
+<textarea id="result" rows="6" cols="30"></textarea>
+
+</form>
+
+</body>
+</html>

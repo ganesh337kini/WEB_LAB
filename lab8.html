@@ -1,0 +1,60 @@
+<!-- Program 8
+Write an XHTML document to input Register Number,
+Subject Code and Marks in 3 Tests.
+Compute average of best two tests using JavaScript.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Average Marks</title>
+
+<script>
+function calculateAverage(){
+
+    let reg = document.getElementById("reg").value;
+    let sub = document.getElementById("sub").value;
+
+    let m1 = Number(document.getElementById("m1").value);
+    let m2 = Number(document.getElementById("m2").value);
+    let m3 = Number(document.getElementById("m3").value);
+
+    if(reg=="" || sub=="" || m1=="" || m2=="" || m3==""){
+        alert("Fill all fields");
+        return;
+    }
+
+    let min = Math.min(m1,m2,m3);
+    let avg = (m1+m2+m3-min)/2;
+
+    alert("Average Marks = " + avg);
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Average Marks Calculator</h2>
+
+Register Number:
+<input type="text" id="reg"><br><br>
+
+Subject Code:
+<input type="text" id="sub"><br><br>
+
+Test 1:
+<input type="number" id="m1"><br><br>
+
+Test 2:
+<input type="number" id="m2"><br><br>
+
+Test 3:
+<input type="number" id="m3"><br><br>
+
+<button onclick="calculateAverage()">
+Calculate Average
+</button>
+
+</body>
+</html>

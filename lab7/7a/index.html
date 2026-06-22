@@ -1,0 +1,62 @@
+<!-- Program 7(a)
+Develop a simple calculator for Addition, Subtraction,
+Multiplication and Division using JavaScript.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+</head>
+
+<body>
+
+<h2>Simple Calculator</h2>
+
+Number 1:
+<input type="number" id="n1"><br><br>
+
+Number 2:
+<input type="number" id="n2"><br><br>
+
+<button onclick="add()">Add</button>
+<button onclick="sub()">Subtract</button>
+<button onclick="mul()">Multiply</button>
+<button onclick="div()">Divide</button>
+
+<h3 id="result"></h3>
+
+<script>
+
+function add(){
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    document.getElementById("result").innerHTML =
+    "Result = " + (a+b);
+}
+
+function sub(){
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    document.getElementById("result").innerHTML =
+    "Result = " + (a-b);
+}
+
+function mul(){
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    document.getElementById("result").innerHTML =
+    "Result = " + (a*b);
+}
+
+function div(){
+    let a = Number(document.getElementById("n1").value);
+    let b = Number(document.getElementById("n2").value);
+    document.getElementById("result").innerHTML =
+    "Result = " + (a/b);
+}
+
+</script>
+
+</body>
+</html>
