@@ -1,26 +1,21 @@
-<!-- Program 8
-Write an XHTML document to input Register Number,
-Subject Code and Marks in 3 Tests.
-Compute average of best two tests using JavaScript.
--->
-
+```html
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Average Marks</title>
 
 <script>
-function calculateAverage(){
-
+function calculateAverage()
+{
     let reg = document.getElementById("reg").value;
     let sub = document.getElementById("sub").value;
+    let m1 = parseInt(document.getElementById("m1").value);
+    let m2 = parseInt(document.getElementById("m2").value);
+    let m3 = parseInt(document.getElementById("m3").value);
 
-    let m1 = Number(document.getElementById("m1").value);
-    let m2 = Number(document.getElementById("m2").value);
-    let m3 = Number(document.getElementById("m3").value);
-
-    if(reg=="" || sub=="" || m1=="" || m2=="" || m3==""){
-        alert("Fill all fields");
+    if(reg=="" || sub=="" || isNaN(m1) || isNaN(m2) || isNaN(m3))
+    {
+        alert("Please fill all fields");
         return;
     }
 
@@ -30,6 +25,22 @@ function calculateAverage(){
     alert("Average Marks = " + avg);
 }
 </script>
+
+<style>
+body{
+    text-align:center;
+    font-family:Arial;
+}
+
+input{
+    margin:5px;
+    padding:5px;
+}
+
+button{
+    padding:5px 10px;
+}
+</style>
 
 </head>
 
@@ -43,13 +54,13 @@ Register Number:
 Subject Code:
 <input type="text" id="sub"><br><br>
 
-Test 1:
+Marks 1:
 <input type="number" id="m1"><br><br>
 
-Test 2:
+Marks 2:
 <input type="number" id="m2"><br><br>
 
-Test 3:
+Marks 3:
 <input type="number" id="m3"><br><br>
 
 <button onclick="calculateAverage()">
@@ -58,3 +69,4 @@ Calculate Average
 
 </body>
 </html>
+```
